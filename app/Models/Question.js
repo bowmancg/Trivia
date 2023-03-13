@@ -4,14 +4,14 @@ export class Question {
     constructor(data) {
         this.id = generateId()
         this.difficulty = data.difficulty
-        this.type = data.multipleChoice ? 'multiple' : data.trueFalse ? 'boolean' : this.type == ' '
+        this.type = data.multipleChoice ? 'multiple' : data.trueFalse ? 'boolean' : this.type == ''
         this.question = data.question
         this.correct_answer = data.correct_answer
         this.incorrect_answers = data.incorrect_answers
     }
     get questionTemplate() {
         return `
-        <div id="question-list" class="col-5 card">
+        <div id="questions" class="col-5 card">
           <div class="card-title">
             <p class="fs-2 text-center">Question 1. </p>
           </div>
